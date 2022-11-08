@@ -123,7 +123,7 @@ class LinkedList:
         """
         if index == 0:
             self._head = Node(val)
-            self._head.set_next(curr)
+            self._head.set_next(Node(val))
 
         if curr is None or self.get_head() is None:
             self.add(val)
