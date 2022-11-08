@@ -9,32 +9,8 @@ class Node:
     """
 
     def __init__(self, data):
-        self._data = data
-        self._next = None
-
-    def get_data(self):
-        """
-        Get method for node data in the linked list.
-        """
-        return self._data
-
-    def set_data(self, data):
-        """
-        Set method for node data in the linked list.
-        """
-        self._data = data
-
-    def get_next(self):
-        """
-        Get method for next node in the linked list.
-        """
-        return self._next
-
-    def set_next(self, val):
-        """
-        Set method for next node in linked list queue.
-        """
-        self._next = val
+        self.data = data
+        self.next = None
 
 
 class LinkedList:
@@ -55,20 +31,18 @@ class LinkedList:
         """
         Recursive add method. Adds node containing val to end of linked list.
         """
-        if self._head is None:
-            self._head = Node(val)
+        if curr.next is None:
+            curr.next = Node(val)
             return
-
-        if curr.get_next() is not None:
-            self.rec_add(val, curr.get_next())
-
-        else:
-            curr.set_next(Node(val))
+        self.rec_add(val, curr.next)
 
     def add(self, val):
         """
         Recursive add helper method.
         """
+        if self._head is None:
+            self._head = Node(val)
+            return
         self.rec_add(self._head, val)
 
     def rec_remove(self, val, curr):
@@ -79,11 +53,11 @@ class LinkedList:
         if self._head is None:
             return
 
-        if self._head.get_data() == val:
-            self._head = self._head.get_next()
+        if self._head.data == val:
+            self._head = self._head.next
 
         else:
-            self.rec_remove(val, curr.get_next())
+            self.rec_remove(val, curr.next)
 
     def remove(self, val):
         """
@@ -95,16 +69,16 @@ class LinkedList:
         """
         Recursive contains method. Returns True if value is in linked list, otherwise returns False.
         """
-        if curr.get_data() == val:
+        if curr.data == val:
             return True
 
         if curr is None:
             return False
 
-        if self.get_head() is None:
+        if self._head is None:
             return False
 
-        if curr.get_data() != val:
+        if curr.data != val:
             return False
 
         else:
@@ -122,7 +96,7 @@ class LinkedList:
         """
         if index == 0:
             self._head = Node(val)
-            self._head.set_next(Node(val))
+            self._head = (Node(val))
 
         if curr is None or self.get_head() is None:
             self.add(val)
@@ -143,7 +117,7 @@ class LinkedList:
         if self._head is None:
             return
 
-        if curr.get_next() is None:
+        if curr.next is None:
             return
 
         else:
@@ -164,8 +138,8 @@ class LinkedList:
             return plain_list
 
         else:
-            plain_list.append(curr.get_data())
-            self.rec_to_plain_list(curr.get_next(), plain_list)
+            plain_list.append(curr.data)
+            self.rec_to_plain_list(curr.next, plain_list)
 
     def to_plain_list(self):
         """
