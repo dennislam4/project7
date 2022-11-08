@@ -57,7 +57,7 @@ class LinkedList:
             self._head = self._head.next
 
         else:
-            self.rec_remove(val, curr.next)
+            self.rec_remove(val, curr)
 
     def remove(self, val):
         """
