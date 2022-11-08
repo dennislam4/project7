@@ -152,3 +152,4 @@ class LinkedList:
 
         else:
             return plain_list
+
