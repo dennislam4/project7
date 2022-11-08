@@ -30,11 +30,11 @@ class Node:
         """
         return self._next
 
-    def set_next(self, next_node):
+    def set_next(self, val):
         """
         Set method for next node in linked list queue.
         """
-        self._next = next_node
+        self._next = val
 
 
 class LinkedList:
@@ -63,7 +63,6 @@ class LinkedList:
             self.rec_add(val, curr.get_next())
 
         else:
-            self.rec_add(val, curr.get_next())
             curr.set_next(Node(val))
 
     def add(self, val):
