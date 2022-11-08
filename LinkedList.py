@@ -59,11 +59,12 @@ class LinkedList:
             self._head = Node(val)
             return
 
-        if curr.get_next() is None:
-            curr.set_next(Node(val))
+        if curr.get_next() is not None:
+            self.rec_add(val, curr.get_next())
 
         else:
             self.rec_add(val, curr.get_next())
+            curr.set_next(Node(val))
 
     def add(self, val):
         """
@@ -79,11 +80,11 @@ class LinkedList:
         if self._head is None:
             return
 
-        if self._head.data == val:
-            self._head = self._head.next
+        if self._head.get_data() == val:
+            self._head = self._head.get_next()
 
         else:
-            self.rec_remove(val, curr.next)
+            self.rec_remove(val, curr.get_next())
 
     def remove(self, val):
         """
@@ -98,7 +99,13 @@ class LinkedList:
         if curr.get_data() == val:
             return True
 
-        if curr is None or self.get_head() is None or curr.get_data() != val:
+        if curr is None:
+            return False
+
+        if self.get_head() is None:
+            return False
+
+        if curr.get_data() != val:
             return False
 
         else:
