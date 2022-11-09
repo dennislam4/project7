@@ -34,8 +34,7 @@ class LinkedList:
         if curr.next is None:
             curr.next = Node(val)
             return
-        else:
-            self.rec_add(val, curr.next)
+        self.rec_add(val, curr.next)
 
     def add(self, val):
         """
@@ -44,15 +43,28 @@ class LinkedList:
         if self._head is None:
             self._head = Node(val)
             return
-        else:
-            curr = self._head
-            self.rec_add(val, curr)
+        curr = self._head
+        self.rec_add(val, curr)
 
     def rec_remove(self, val, curr):
         """
         Recursive remove method for nodes containing val within linked list. Checks if list is empty and returns. Then
         checks if head should be removed and if so, makes head refer to next node.
         """
+        if curr.next is None:
+            curr.next = Node(val)
+            return
+
+        if curr.next.data == val:
+            return
+        else:
+            self.rec_remove(val, curr.next)
+
+    def remove(self, val):
+        """
+        Recursive remove helper method.
+        """
+
         if self._head is None:
             return
 
@@ -62,12 +74,6 @@ class LinkedList:
 
         else:
             self.rec_remove(val, curr)
-
-    def remove(self, val):
-        """
-        Recursive remove helper method.
-        """
-        self.rec_remove(self._head, val)
 
     def rec_contains(self, val, curr):
         """
