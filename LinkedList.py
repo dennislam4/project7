@@ -140,7 +140,7 @@ class LinkedList:
         Recursive method that returns a regular Python list with the same values and order as current state of the
         linked list.
         """
-        if curr is None or self._head is None:
+        if curr is None:
             return plain_list
 
         else:
