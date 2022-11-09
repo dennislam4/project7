@@ -74,7 +74,7 @@ class LinkedList:
             return
 
         else:
-            self.rec_remove(val, curr)
+            self.rec_remove(self._head, val)
 
     def rec_contains(self, val, curr):
         """
