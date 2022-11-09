@@ -52,14 +52,14 @@ class LinkedList:
         checks if head should be removed and if so, makes head refer to next node.
         """
         if curr.next is None:
-            curr.next = Node(val)
             return
 
-        if curr.next.data == val:
-            return
+        if curr.data == val:
+            return curr.next
 
         else:
-            self.rec_remove(val, curr.next)
+            curr.next = self.rec_remove(val, curr.next)
+            return curr
 
     def remove(self, val):
         """
