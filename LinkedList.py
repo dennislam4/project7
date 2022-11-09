@@ -153,7 +153,6 @@ class LinkedList:
         Recursive to_plain_list helper method.
         """
         plain_list = []
-
         if self._head is not None:
             return self.rec_to_plain_list(self._head, plain_list)
 
