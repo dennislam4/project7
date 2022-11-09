@@ -31,8 +31,8 @@ class LinkedList:
         """
         Recursive add method. Adds node containing val to end of linked list.
         """
+        curr.next = Node(val)
         if curr.next is None:
-            curr.next = Node(val)
             return
         self.rec_add(val, curr.next)
 
@@ -50,7 +50,7 @@ class LinkedList:
         Recursive remove method for nodes containing val within linked list. Checks if list is empty and returns. Then
         checks if head should be removed and if so, makes head refer to next node.
         """
-        if self._head is None or curr.next is None:
+        if self._head is None:
             return
 
         if self._head.data == val:
