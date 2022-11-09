@@ -140,12 +140,12 @@ class LinkedList:
         Recursive method that returns a regular Python list with the same values and order as current state of the
         linked list.
         """
-        if curr is None:
+        if curr.next is None:
+            plain_list.append(curr.data)
             return plain_list
 
         else:
             plain_list.append(curr.data)
-            curr = curr.next
             self.rec_to_plain_list(curr.next, plain_list)
 
     def to_plain_list(self):
