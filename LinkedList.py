@@ -145,6 +145,7 @@ class LinkedList:
 
         else:
             plain_list.append(curr.data)
+            curr = curr.next
             self.rec_to_plain_list(curr.next, plain_list)
 
     def to_plain_list(self):
