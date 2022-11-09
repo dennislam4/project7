@@ -51,7 +51,6 @@ class LinkedList:
         Recursive remove method for nodes containing val within linked list. Checks if list is empty and returns. Then
         checks if head should be removed and if so, makes head refer to next node.
         """
-
         if curr.next is None:
             curr.next = Node(val)
             return
