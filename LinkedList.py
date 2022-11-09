@@ -95,7 +95,7 @@ class LinkedList:
         """
         if self._head is None:
             return False
-        self.rec_contains(self._head, val)
+        return self.rec_contains(self._head, val)
 
     def rec_insert(self, val, index, curr):
         """
