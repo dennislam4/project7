@@ -57,6 +57,7 @@ class LinkedList:
 
         if curr.next.data == val:
             return
+
         else:
             self.rec_remove(val, curr.next)
 
@@ -82,14 +83,11 @@ class LinkedList:
         if curr.data == val:
             return True
 
-        if curr.next is not None:
-            return self.rec_contains(val, curr.next)
-
         if curr is None or curr.next is None:
             return False
 
         else:
-            return False
+            return self.rec_contains(val, curr.next)
 
     def contains(self, val):
         """
