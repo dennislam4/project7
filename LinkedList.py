@@ -73,18 +73,21 @@ class LinkedList:
         if curr.data == val:
             return True
 
-        if curr is None:
+        if curr.next is not None:
+            return self.rec_contains(val, curr.next)
+
+        if curr is None or curr.next is None:
             return False
 
         else:
-            return self.rec_contains(val, curr.next)
+            return False
 
     def contains(self, val):
         """
         Recursive contains helper method.
         """
-        if self._head.data == val:
-            return True
+        if self._head is None:
+            return False
         self.rec_contains(self._head, val)
 
     def rec_insert(self, val, index, curr):
