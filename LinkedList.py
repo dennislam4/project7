@@ -45,7 +45,8 @@ class LinkedList:
             self._head = Node(val)
             return
         else:
-            self.rec_add(self._head, val)
+            curr = self._head
+            self.rec_add(val, curr)
 
     def rec_remove(self, val, curr):
         """
