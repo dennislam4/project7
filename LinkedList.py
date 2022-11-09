@@ -34,7 +34,8 @@ class LinkedList:
         curr.next = Node(val)
         if curr.next is None:
             return
-        self.rec_add(val, curr.next)
+        else:
+            self.rec_add(val, curr.next)
 
     def add(self, val):
         """
