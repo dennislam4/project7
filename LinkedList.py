@@ -31,11 +31,9 @@ class LinkedList:
         """
         Recursive add method. Adds node containing val to end of linked list.
         """
-        curr.next = Node(val)
         if curr.next is None:
-            return
-        else:
-            self.rec_add(val, curr.next)
+            curr.next = Node(val)
+        self.rec_add(val, curr.next)
 
     def add(self, val):
         """
@@ -43,7 +41,6 @@ class LinkedList:
         """
         if self._head is None:
             self._head = Node(val)
-            return
         self.rec_add(self._head, val)
 
     def rec_remove(self, val, curr):
