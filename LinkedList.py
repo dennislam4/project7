@@ -128,7 +128,7 @@ class LinkedList:
         """
         Recursive reverse helper method.
         """
-         return self.rec_reverse(self._head)
+        return self.rec_reverse(self._head)
 
     def rec_to_plain_list(self, curr, plain_list):
         """
