@@ -103,7 +103,7 @@ class LinkedList:
         if index == 0:
             self._head = Node(val)
 
-        if curr is None or self._head is None:
+        if curr is None:
             return self._head
 
         else:
