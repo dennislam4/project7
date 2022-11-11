@@ -84,8 +84,6 @@ class LinkedList:
         if curr is not None:
             if curr.data == val:
                 return True
-
-        else:
             return self.rec_contains(val, curr.next)
 
     def contains(self, val):
