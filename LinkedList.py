@@ -80,11 +80,13 @@ class LinkedList:
         """
         Recursive contains method. Returns True if value is in linked list, otherwise returns False.
         """
-        if curr.data == val:
-            return True
 
         if curr is None or curr.next is None:
             return False
+
+        if curr is not None:
+            if curr.data == val:
+                return True
 
         else:
             return self.rec_contains(val, curr.next)
@@ -95,7 +97,8 @@ class LinkedList:
         """
         if self._head is None:
             return False
-        return self.rec_contains(self._head, val)
+        else:
+            return self.rec_contains(val, self._head
 
     def rec_insert(self, val, index, curr):
         """
