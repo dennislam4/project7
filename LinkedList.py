@@ -52,10 +52,10 @@ class LinkedList:
         checks if head should be removed and if so, makes head refer to next node.
         """
         if curr.next is None:
-            curr.next = Node(val)
             return
 
         if curr.next.data == val:
+            curr.next = curr.next.next
             return
 
         else:
@@ -74,7 +74,7 @@ class LinkedList:
             return
 
         else:
-            self.rec_remove(self._head, val)
+            self.rec_remove(val, self._head)
 
     def rec_contains(self, val, curr):
         """
