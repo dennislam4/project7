@@ -122,7 +122,7 @@ class LinkedList:
 
         if curr.next is not None:
             self.rec_reverse(curr.next)
-        self._head = curr.next
+        self._head = curr.next.next
 
     def reverse(self):
         """
