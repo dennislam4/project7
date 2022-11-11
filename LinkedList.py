@@ -104,7 +104,7 @@ class LinkedList:
             self._head = Node(val)
 
         if curr is None or self._head is None:
-            self.add(val)
+            return self._head
 
         else:
             self.rec_insert(val, index, curr)
