@@ -119,19 +119,17 @@ class LinkedList:
         """
         Recursive reverse method. Reverses the order of nodes in linked list.
         """
-        if self._head is None:
-            return
 
-        if curr.next is None:
-            return
-
-        else:
-            self.rec_reverse(curr)
+        if curr.next is not None:
+            self.rec_reverse(curr.next)
+        self._head = curr
 
     def reverse(self):
         """
         Recursive reverse helper method.
         """
+        if self._head is None:
+            return
         self.rec_reverse(self._head)
 
     def rec_to_plain_list(self, curr, plain_list):
