@@ -81,9 +81,6 @@ class LinkedList:
         Recursive contains method. Returns True if value is in linked list, otherwise returns False.
         """
 
-        if curr is None or curr.next is None:
-            return False
-
         if curr is not None:
             if curr.data == val:
                 return True
