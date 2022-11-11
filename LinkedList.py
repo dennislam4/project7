@@ -99,7 +99,7 @@ class LinkedList:
             return False
 
         else:
-            return self.rec_contains(val, self._head
+            return self.rec_contains(val, self._head)
 
     def rec_insert(self, val, index, curr):
         """
