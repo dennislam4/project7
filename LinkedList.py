@@ -139,13 +139,10 @@ class LinkedList:
         Recursive method that returns a regular Python list with the same values and order as current state of the
         linked list.
         """
-        if curr.next is None:
-            plain_list.append(curr.data)
-            return plain_list
-
-        else:
-            plain_list.append(curr.data)
+        plain_list.append(curr.data)
+        if curr.next is not None:
             self.rec_to_plain_list(curr.next, plain_list)
+            return
 
     def to_plain_list(self):
         """
@@ -156,4 +153,5 @@ class LinkedList:
             return plain_list
 
         else:
-            return self.rec_to_plain_list(self._head, plain_list)
+            self.rec_to_plain_list(self._head, plain_list)
+        return plain_list
